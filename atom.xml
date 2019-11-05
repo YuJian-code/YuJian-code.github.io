@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YuJian</title>
+  
+  <subtitle>一个成熟的博客，应该学会自己学习了</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://YuJian-code.github.io/"/>
+  <updated>2019-10-16T08:08:09.260Z</updated>
+  <id>https://YuJian-code.github.io/</id>
+  
+  <author>
+    <name>YuJian</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://YuJian-code.github.io/2019/10/16/yujian-python/"/>
+    <id>https://YuJian-code.github.io/2019/10/16/yujian-python/</id>
+    <published>2019-10-16T05:26:07.398Z</published>
+    <updated>2019-10-16T08:08:09.260Z</updated>
+    
+    <content type="html"><![CDATA[<p>##this is my first love</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##this is my first love&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python_circle_number</title>
+    <link href="https://YuJian-code.github.io/2019/10/16/python-circle-number/"/>
+    <id>https://YuJian-code.github.io/2019/10/16/python-circle-number/</id>
+    <published>2019-10-16T04:56:27.000Z</published>
+    <updated>2019-10-23T03:13:44.176Z</updated>
+    
+    <content type="html"><![CDATA[<p>‘’’python</p><p>size = int(input(“please input size: “))</p><p>array = [[0]*size]</p><p>#创建一个二维数组，python只有列表类型</p><p>for i in range(size-1):</p><p>  array += [[0]*size]</p><p>#orient代表绕圈的方向</p><p>#0代表向下，1代表向右，2代表向左，3代表向上</p><p>orient = 0</p><p>#填入二维列表元素</p><p>#j控制行索引，K代表列索引</p><p>j = 0</p><p>k = 0</p><p>for i in range(1,size*size+1):</p><p>  array[j][k] = i</p><p>  #如果位于一号线上</p><p>  if j + k == size - 1:</p><p>​    if j &gt; k:</p><p>​      orient = 1</p><p>​    else:</p><p>​      orient = 2</p><p>  #如果位于2号线上</p><p>  elif j == k and k &gt;= size / 2:</p><p>​    orient = 3</p><p>  elif j == k - 1 and k &lt;= size / 2:</p><p>​    orient = 0</p><p>  #根据方向来控制行列索引的改变</p><p>  if orient == 0: </p><p>​    j += 1</p><p>  elif orient == 1:</p><p>​    k += 1</p><p>  elif orient == 2:</p><p>​    k -= 1</p><p>  elif orient == 3:</p><p>​    j -= 1</p><p>for i in range(size):</p><p>  for j in range(size):</p><p>​    print(‘%02d ‘ % array[i][j] ,end=””)</p><p>  print(“”)</p><p>  ‘’’</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;‘’’python&lt;/p&gt;
+&lt;p&gt;size = int(input(“please input size: “))&lt;/p&gt;
+&lt;p&gt;array = [[0]*size]&lt;/p&gt;
+&lt;p&gt;#创建一个二维数组，python只有列表类型&lt;/p&gt;
+&lt;p&gt;for i in range(s
+      
+    
+    </summary>
+    
+    
+    
+      <category term="数字绕圈圈游戏" scheme="https://YuJian-code.github.io/tags/%E6%95%B0%E5%AD%97%E7%BB%95%E5%9C%88%E5%9C%88%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://YuJian-code.github.io/2019/09/27/hello-world/"/>
+    <id>https://YuJian-code.github.io/2019/09/27/hello-world/</id>
+    <published>2019-09-27T11:12:37.422Z</published>
+    <updated>2019-09-27T11:12:37.423Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
