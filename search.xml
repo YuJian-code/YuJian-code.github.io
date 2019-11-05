@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>N宫格横竖斜和相等算法</title>
+    <url>/2019/11/05/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<p>#N宫格横竖斜和相等算法</p>
+<p>n奇数幻方口诀：</p>
+<ol>
+<li><p>数字1放在第一行中间</p>
+</li>
+<li><p>依次放在上一个数的右上角</p>
+<p>2.1如果右边出去了就回到左边（3，4）<br>2.2 如果上面出去了就放下面（1，2）<br>2.3 如果右上角有了就放在这个数的下面</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">lines = int(input(<span class="string">"请输入奇数行数： "</span>))</span><br><span class="line"></span><br><span class="line">array = [[<span class="number">0</span>] * lines]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(lines):</span><br><span class="line">    array = array + [[<span class="number">0</span>] * lines]</span><br><span class="line"></span><br><span class="line">row,col = <span class="number">0</span>,lines // <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,lines * lines + <span class="number">1</span>):</span><br><span class="line">    array[row][col] = i</span><br><span class="line">    <span class="keyword">if</span> i % lines == <span class="number">0</span>:</span><br><span class="line">        row += <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> row == <span class="number">0</span>:</span><br><span class="line">        row = lines - <span class="number">1</span></span><br><span class="line">        col += <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> col == lines - <span class="number">1</span>:</span><br><span class="line">        row -= <span class="number">1</span></span><br><span class="line">        col = <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        row -= <span class="number">1</span></span><br><span class="line">        col += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(lines):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(lines):</span><br><span class="line">        print(<span class="string">"%02d"</span> % array[i][j],end=<span class="string">" "</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
+
+<p>#水仙花数</p>
+<p> 水仙花数指一个三个位，其个位数字的立方和等于该数本身，如153 = 1^3+5^3+3^3 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</span><br><span class="line">    a = i % <span class="number">10</span></span><br><span class="line">    b = i //<span class="number">10</span> % <span class="number">10</span></span><br><span class="line">    c = i//<span class="number">100</span> </span><br><span class="line">    <span class="keyword">if</span> a**<span class="number">3</span> + b**<span class="number">3</span> + c**<span class="number">3</span> == i:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
+
+<p>#素数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</span><br><span class="line">    a = i % <span class="number">10</span></span><br><span class="line">    b = i //<span class="number">10</span> % <span class="number">10</span></span><br><span class="line">    c = i//<span class="number">100</span> </span><br><span class="line">    <span class="keyword">if</span> a**<span class="number">3</span> + b**<span class="number">3</span> + c**<span class="number">3</span> == i:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>one</category>
+        <category>two</category>
+        <category>three</category>
+      </categories>
+      <tags>
+        <tag>N宫格横竖斜和相等算法</tag>
+        <tag>水仙花数</tag>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/2019/10/16/yujian-python/</url>
     <content><![CDATA[<p>##this is my first love</p>
