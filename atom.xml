@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://YuJian-code.github.io/"/>
-  <updated>2019-11-05T12:48:23.937Z</updated>
+  <updated>2019-11-06T15:23:14.350Z</updated>
   <id>https://YuJian-code.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>N宫格横竖斜和相等算法</title>
+    <title>流程控制练习</title>
     <link href="https://YuJian-code.github.io/2019/11/05/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%BB%83%E4%B9%A0/"/>
     <id>https://YuJian-code.github.io/2019/11/05/流程控制练习/</id>
     <published>2019-11-05T12:26:19.000Z</published>
-    <updated>2019-11-05T12:48:23.937Z</updated>
+    <updated>2019-11-06T15:23:14.350Z</updated>
     
     <content type="html"><![CDATA[<p>#N宫格横竖斜和相等算法</p><p>n奇数幻方口诀：</p><ol><li><p>数字1放在第一行中间</p></li><li><p>依次放在上一个数的右上角</p><p>2.1如果右边出去了就回到左边（3，4）<br>2.2 如果上面出去了就放下面（1，2）<br>2.3 如果右上角有了就放在这个数的下面</p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">lines = int(input(<span class="string">"请输入奇数行数： "</span>))</span><br><span class="line"></span><br><span class="line">array = [[<span class="number">0</span>] * lines]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(lines):</span><br><span class="line">    array = array + [[<span class="number">0</span>] * lines]</span><br><span class="line"></span><br><span class="line">row,col = <span class="number">0</span>,lines // <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,lines * lines + <span class="number">1</span>):</span><br><span class="line">    array[row][col] = i</span><br><span class="line">    <span class="keyword">if</span> i % lines == <span class="number">0</span>:</span><br><span class="line">        row += <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> row == <span class="number">0</span>:</span><br><span class="line">        row = lines - <span class="number">1</span></span><br><span class="line">        col += <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> col == lines - <span class="number">1</span>:</span><br><span class="line">        row -= <span class="number">1</span></span><br><span class="line">        col = <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        row -= <span class="number">1</span></span><br><span class="line">        col += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(lines):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(lines):</span><br><span class="line">        print(<span class="string">"%02d"</span> % array[i][j],end=<span class="string">" "</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure><p>#水仙花数</p><p> 水仙花数指一个三个位，其个位数字的立方和等于该数本身，如153 = 1^3+5^3+3^3 </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</span><br><span class="line">    a = i % <span class="number">10</span></span><br><span class="line">    b = i //<span class="number">10</span> % <span class="number">10</span></span><br><span class="line">    c = i//<span class="number">100</span> </span><br><span class="line">    <span class="keyword">if</span> a**<span class="number">3</span> + b**<span class="number">3</span> + c**<span class="number">3</span> == i:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure><p>#素数</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</span><br><span class="line">    a = i % <span class="number">10</span></span><br><span class="line">    b = i //<span class="number">10</span> % <span class="number">10</span></span><br><span class="line">    c = i//<span class="number">100</span> </span><br><span class="line">    <span class="keyword">if</span> a**<span class="number">3</span> + b**<span class="number">3</span> + c**<span class="number">3</span> == i:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -41,90 +41,7 @@
     </summary>
     
     
-      <category term="one" scheme="https://YuJian-code.github.io/categories/one/"/>
-    
-      <category term="two" scheme="https://YuJian-code.github.io/categories/two/"/>
-    
-      <category term="three" scheme="https://YuJian-code.github.io/categories/three/"/>
-    
-    
-      <category term="N宫格横竖斜和相等算法" scheme="https://YuJian-code.github.io/tags/N%E5%AE%AB%E6%A0%BC%E6%A8%AA%E7%AB%96%E6%96%9C%E5%92%8C%E7%9B%B8%E7%AD%89%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="水仙花数" scheme="https://YuJian-code.github.io/tags/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0/"/>
-    
-      <category term="素数" scheme="https://YuJian-code.github.io/tags/%E7%B4%A0%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://YuJian-code.github.io/2019/10/16/yujian-python/"/>
-    <id>https://YuJian-code.github.io/2019/10/16/yujian-python/</id>
-    <published>2019-10-16T05:26:07.398Z</published>
-    <updated>2019-10-16T08:08:09.260Z</updated>
-    
-    <content type="html"><![CDATA[<p>##this is my first love</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;##this is my first love&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python_circle_number</title>
-    <link href="https://YuJian-code.github.io/2019/10/16/python-circle-number/"/>
-    <id>https://YuJian-code.github.io/2019/10/16/python-circle-number/</id>
-    <published>2019-10-16T04:56:27.000Z</published>
-    <updated>2019-10-23T03:13:44.176Z</updated>
-    
-    <content type="html"><![CDATA[<p>‘’’python</p><p>size = int(input(“please input size: “))</p><p>array = [[0]*size]</p><p>#创建一个二维数组，python只有列表类型</p><p>for i in range(size-1):</p><p>  array += [[0]*size]</p><p>#orient代表绕圈的方向</p><p>#0代表向下，1代表向右，2代表向左，3代表向上</p><p>orient = 0</p><p>#填入二维列表元素</p><p>#j控制行索引，K代表列索引</p><p>j = 0</p><p>k = 0</p><p>for i in range(1,size*size+1):</p><p>  array[j][k] = i</p><p>  #如果位于一号线上</p><p>  if j + k == size - 1:</p><p>​    if j &gt; k:</p><p>​      orient = 1</p><p>​    else:</p><p>​      orient = 2</p><p>  #如果位于2号线上</p><p>  elif j == k and k &gt;= size / 2:</p><p>​    orient = 3</p><p>  elif j == k - 1 and k &lt;= size / 2:</p><p>​    orient = 0</p><p>  #根据方向来控制行列索引的改变</p><p>  if orient == 0: </p><p>​    j += 1</p><p>  elif orient == 1:</p><p>​    k += 1</p><p>  elif orient == 2:</p><p>​    k -= 1</p><p>  elif orient == 3:</p><p>​    j -= 1</p><p>for i in range(size):</p><p>  for j in range(size):</p><p>​    print(‘%02d ‘ % array[i][j] ,end=””)</p><p>  print(“”)</p><p>  ‘’’</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;‘’’python&lt;/p&gt;
-&lt;p&gt;size = int(input(“please input size: “))&lt;/p&gt;
-&lt;p&gt;array = [[0]*size]&lt;/p&gt;
-&lt;p&gt;#创建一个二维数组，python只有列表类型&lt;/p&gt;
-&lt;p&gt;for i in range(s
-      
-    
-    </summary>
-    
-    
-    
-      <category term="数字绕圈圈游戏" scheme="https://YuJian-code.github.io/tags/%E6%95%B0%E5%AD%97%E7%BB%95%E5%9C%88%E5%9C%88%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://YuJian-code.github.io/2019/09/27/hello-world/"/>
-    <id>https://YuJian-code.github.io/2019/09/27/hello-world/</id>
-    <published>2019-09-27T11:12:37.422Z</published>
-    <updated>2019-09-27T11:12:37.423Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
+      <category term="python" scheme="https://YuJian-code.github.io/categories/python/"/>
     
     
   </entry>
